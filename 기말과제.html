@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		
+	    /*section arrangement */
+	    html,body { height: 100% }
+	    .header { width: 100%; height: 5.5%;  } /*3.1웹 페이지 문서 구조화 */
+	    .nav { width : 12%; height: 700%; float: left ; /*background-color: #FF6666;*/}
+	    .section{ width: 76%; height: 700%; float : left; /*background-color: #FFFF99*/}
+	    .aside{ width : 12%; height: 700%; float: right; /*background-color: #FF6666;*/}
+	    .footer{ width: 100%; height: 300%; clear: both; }
+	    /*Top logo모양 */
+        
+	    #logo_box_size {width: 300px ; height: 145.344px ; position: absolute; left: 50%; margin-left: -150px; }
+        #logo { font : italic bold 40px consolas, sans-serif; text-decoration: none; color : black; }
+
+	    /*//절대배치이용해서 가운데 배치*/
+	    /*상단 메뉴바*/
+
+
+	    #menubar ul { background-color: #CC3333; margin: 0; padding: 0; box-shadow: 3px 3px 3px  darkgray}
+	    #menubar ul li { display: inline-block; list-style-type:  none; padding: 8px; padding-bottom: 3px; box-shadow: 1px 0px 0px  darkgray}
+	    #menubar ul li:hover {border-bottom-width: 4px; border-bottom-style: solid; border-bottom-color: #CCFF33 }/*경계로 꾸미기 */
+	    #menubar ul li a { color : white; text-decoration: none }
+	    #menubar ul li b:hover { width: 100% ; height: 100%; color: orange }
+        
+        /*section menu*/
+        #section_menubar ul { background-color: #CC3333; margin: 0; padding: 0; font-weight: bold; box-shadow: 3px 3px 3px  darkgray}
+	    #section_menubar ul li { display: block; list-style-type:  none; padding: 8px; padding-bottom: 3px; box-shadow: 0px 0px 0px}
+	    #section_menubar ul li:hover {border-bottom-width: 4px ; border-bottom-style: solid; border-bottom-color: #CCFF33 }
+	    #section_menubar ul li a { color : white; text-decoration: none }
+	    #section_menubar ul li a:hover { width: 100% ; height: 100%; color: 
+	    	orange }
+
+
+
+        /* 사이드 메뉴	   */
+
+
+	    #side_menubar ul { background-color: #CC3333; margin: 0; padding: 0; font-weight: bold; box-shadow: 3px 3px 3px  darkgray}
+	    #side_menubar ul li { display: block; list-style-type:  none; padding: 8px; padding-bottom: 3px; box-shadow: 0px 0px 0px}
+	    #side_menubar ul li:hover {border-bottom-width: 4px ; border-bottom-style: solid; border-bottom-color: #CCFF33 }
+	    #side_menubar ul li a { color : white; text-decoration: none }
+	    #side_menubar ul li a:hover { width: 100% ; height: 100%; color: 
+	    	orange }
+	   /* submenu*/
+
+	    #sub_menu  { position: absolute; visibility: hidden; opacity: 0;
+	    visibility: hidden; 
+	    }
+	    #sub_text  { text-decoration: none; color: white; }
+	    #side_menubar li:hover #sub_menu { opacity: 1;
+	    visibility: visible; }
+       
+
+        /* bottom 하단 박스 모양*/
+        #bottom ul { background-color: #CC3333; margin-bottom: 10px; padding: 0; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: black}
+	    #bottom ul li { display: block; list-style-type:  none; padding: 8px; padding-bottom: 3px;}
+	    #bottom ul li:hover {border-bottom-width: 4px; border-bottom-style: solid; border-bottom-color: #CCFF33 }/*경계로 꾸미기 */
+	    #bottom ul li a { color : white; text-decoration: none }
+	    #bottom ul li b:hover { width: 100% ; height: 100%; color: orange }
+        /*하단 가장 큰 박스 가운데 정렬*/
+	    .bottom_div {
+	    	position: absolute; left: 15%;
+	    	padding: 14px; 
+	    	padding-top:24px;
+	    	padding-bottom: 0px;
+	    	border: 0px;
+	    	margin: auto; 
+	    	height: 390px;
+	    	width: 70%;
+	    }
+	    /*하단 작은 div 박스 style*/
+	    .bottom_small_div{ position: absolute; 
+                           width: 20%; 
+                           padding-right: 10px; 
+                           height: 60%;
+                           padding-right: 10px;
+	    }
+        
+
+
+        /*박스모양 */
+	    #box_shape_upper {  position : absolute; display: inline-block; width: 300px;
+	    height: 150px; background-color: orange; left: 20%; top: 30%; }
+	    #box_shape_upper_right {  position : absolute; display: inline-block; width: 300px;
+	    height: 150px; background-color: orange; left : 60% ; top: 20%; }
+	    #box_design {display: block; background-color: #de5231; height: 30px  }
+
+	    /*제목라인 및 사이드 메뉴 엥커 section */
+        .line { position: absolute; display: inline-block; top: 30% ; left: 20% ;font-size : 30px;}
+        .line_football { position: absolute; display: inline-block; top: 120% ; left: 20% ;font-size : 30px;}
+        .line_Tennis { position: absolute; display: inline-block; top: 300% ; left: 20% ;font-size : 30px;}
+        .line_Golf { position: absolute; display: inline-block; top: 450% ; left: 20% ;font-size : 30px;}
+        .line_basketball { position: absolute; display: inline-block; top: 630% ; left: 20% ;font-size : 30px;}
+        .line_Athletics { position: absolute; display: inline-block; top: 600% ; left: 20% ;font-size : 30px;}
+
+         /* 시간 만들기 */
+        #position { position: absolute; display: inline-block; }
+
+        /*video 라인 및 크기*/
+        #video_size { position: absolute; height: 300px; width: 350px; top :35%;  left: 20%; 
+        }
+        #video_size1 { position: absolute; height: 300px; width: 350px; top :35%;  left: 40%; }
+        #video_size2 { position: absolute; height: 300px; width: 350px; top :35%;  left: 60%; }
+        #video_size3 { position: absolute; height: 300px; width: 350px; top :70%;  left: 20%; }
+        #video_size4 { position: absolute; height: 300px; width: 350px; top :70%;  left: 40%; }
+        #video_size5 { position: absolute; height: 300px; width: 350px; top :70%;  left: 60%; }
+
+        /*표만들기 */
+        table {
+        	border-collapse: collapse;
+        }
+
+        td, th {
+        	text-align: left;
+        	padding: 5px;
+        	height: 10px;
+        	width:100px;
+        }
+
+        thead, tfoot{
+        	background-color: darkgray;
+        	color : yellow;
+        }
+
+        tbody tr:nth-child(even) {
+        	background: aliceblue;
+        }
+
+        tbody tr:hover {
+        	background: #FF6666;
+        }
+
+        /*글자 변하기 */
+        span { transition: font-size 1s; }
+        span:hover {
+            font-size : 150%;
+        }
+	</style>
+	<!-- 사용자객체 프로토타입 -->
+    <script>
+    	function soccer(player,goal,money) {
+           this.player = player;
+           this.goal = goal;
+           this.money = money;
+
+           this.expect = function () { return this.money;}
+           this.won = function (goal) {this.money += goal * 10;}
+           this.lost = function (lost) {this.money -= lost * 10;}
+    	}
+      
+    </script>
+    <!-- 손흥민 지소연 부분 기사 dom 객체 스판테그 동적변형 -->
+    <script>
+    	    function change() {
+        	var spanArray = document.getElementsByTagName("span1");
+        	for ( var i=0; i<spanArray.length; i++){
+        	var span = spanArray[i];       	
+        	span.style.color = "blue";
+        	span.style.background = "#CCFF33";
+            }
+        }
+    </script>
+    <!-- 축구선수 연봉  -->
+    <script>
+    	   function go() {
+            var text = prompt("player name : ")
+            if(text == null)
+            	alert("ask any time");
+            else if(text == "")
+            	alert("ask any time");
+            else if(text == "JAMIE VARDY")
+                alert("expectaition 220k");
+            else if(text == "MOHAMED SALAH")
+                 alert("expectaition 200k");
+            else if(text == "AUBAMEYANG")
+                 alert("expectaition 180k");
+            else if(text == "AGUERO")
+                 alert("expectaition 170k");
+            else if(text == "DANNY INGS")
+                 alert("expectaition 1600k");
+            else if(text == "SADIO MANE")
+                 alert("expectaition 1500k");                  
+            else if(text == "RASHFORD")
+                 alert("expectaition 130k");
+            else if(text == "KEVIN DE BRUYNE")
+                 alert("expectaition 320k");
+            else if(text == "ARNOLD")
+                 alert("expectaition 200k");
+            else if(text == "SILVA")
+                 alert("expectaition 200k");
+            else if(text == "RIYAD MAHREZ")
+                 alert("expectaition 100k");
+            else if(text == "FIRMINO")
+                 alert("expectaition 150k");
+            else if(text == "EMILIANO")
+                 alert("expectaition 200k");
+            else if(text == "HEUNG-MIN SON")
+                 alert("expectaition 300k");
+
+        }
+     </script>
+     <!-- 테니스 선수 있는 부분 alert을 통해 변경 -->
+     <script>
+     	function novak() {
+     		alert("NOVAK victory rate 80%");
+     	}
+     </script>
+     <script>
+     	function stefano() {
+     		alert("STEFANO victory rate 20%");
+     	}
+     </script>
+
+</head>
+<body><!-- 제목 -->
+<header id="f" class="header"><a href="기말과제.html" id="logo" style="text-shadow: 3px 3px 3px  darkgray">SPORTS ALL</a>
+<!-- 로그인 로고  --> <!-- 하이퍼링크 걸어나서 클릭하면 넘어감 -->
+<a  style="position: absolute; left: 70%; top: 2%; "><img src="https://img.icons8.com/material-sharp/24/000000/login-rounded-right.png/"><a href="log in.html" style="position: absolute; left: 71.6%; top: 2%; text-decoration: none; color: black">log in</a></a>
+</a>
+<form>
+<input style="position: absolute; left: 78%; top: 2%;" type="search">
+<input style="position: absolute; left: 84.5%; top: 2%;" type="submit" value="search">
+</form>
+</header>
+
+<nav class="nav">
+	
+	<div id="side_menubar">
+	<!-- 상단 형광색 메뉴 이름 --> 
+		<ul style="background-color: #CCFF33;" >
+			<li style="padding: 6px; font-weight: 900; text-align: center;">
+				menu
+			</li>
+		</ul>
+	<!-- 메뉴밑 목록  -->
+		<ul id="a">
+        
+		<li><a href="#">Sports news</a>
+		<ul id="sub_menu">
+        <li><a id="sub_text" href="https://www.skysports.com/">skysports</a></li>
+        <li><a id="sub_text" href="https://www.bbc.com/sport/tennis" >bbc</a></li>
+        <li><a id="sub_text" href="https://www.nytimes.com/section/sports" >nytimes</a></li>
+        <li><a id="sub_text" href="https://sports.news.naver.com/index.nhn" >naver sports</a></li>
+        </ul>
+        </li>
+		
+		<li><a href="#Football">Football</a>
+	    <ul id="sub_menu">
+        <li><a id="sub_text" href="#EPL">soccer player</a></li>
+        <li><a id="sub_text" href="#Best">best performance</a></li>
+        <li><a id="sub_text" href="https://www.nytimes.com/section/sports" >article</a></li>
+        </ul>
+		</li>
+
+		<li><a href="#Tennis">Tennis</a></li>
+		<li><a href="#Golf">Golf</a></li>
+		<li><a href="#Basketball">Basketball</a></li>
+		<li><a href="#Athletics">Athletics</a></li>
+		<li><a href="#chap6">More</a></li>
+	</ul>
+	</div>
+    
+</nav>
+
+<!-- 섹션 시작 -->
+<section class="section">
+	<div id="menubar">
+	<ul>
+		<li><a href="기말과제.html">Home</a></li>
+		<li><a href="#">Football</a></li>
+		<li><a href="#">Tennis</a></li>
+		<li><a href="#">Golf</a></li>
+		<li><a href="#">Basketball</a></li>
+		<li><a href="#">Athletics</a></li>
+		<li><a href="#">More</a></li>
+	</ul>
+
+
+	<!-- 교수님 설명 스크립트 넘어가는 키 -->
+	<div style="position: absolute; top: 20%; left: 43%; font-size: 30px;">
+		<a href="#평가목록" style="background: #FF6666; text-decoration: none; color: black">평가 목록 Click</a>
+	</div>
+    </div>
+
+
+    <!-- the most viewed -->
+	<a  id="j" class="line">The most viewed</a>
+    <iframe  id="video_size" src="https://www.youtube.com/embed/dwV04XuiWq4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <iframe id="video_size1"src="https://www.youtube.com/embed/xigR__FXGl0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <iframe id="video_size2" src="https://www.youtube.com/embed/ue1NT3QhuVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <iframe id="video_size3" src="https://www.youtube.com/embed/Bc588DD6xmI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       
+    <iframe id="video_size4" src="https://www.youtube.com/embed/XYSAcNq9BZU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+    
+    <iframe id="video_size5" src="https://www.youtube.com/embed/0eAUKz6pHqM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+     
+
+    <!-- 축구 -->
+    
+    <div class="line_football" id="Football" style="border-bottom: 2px solid darkgrey; width: 60%;">Football</div>
+    <a id="EPL" style="position: absolute; display: inline-block; top: 125%; left: 20%; font-size: 30px;">soccer player</a>
+    <a id="position" style="top : 135% ; left: 20% ;font-size : 30px">EPL</a>
+    <!-- 축수 선수 순위 표 (득점)-->
+    <table id="e" style="position: absolute; top: 140%; left: 20%; font-size: 15px;">
+    <thead>
+    	<tr><th>NAME</th><th>Goals</th><th>RANK</th></tr>
+    </thead>
+    <tbody>
+    	<tr><td>JAMIE VARDY</td><td>19</td><td>1</td></tr>
+    	<tr><td>MOHAMED SALAH</td><td>12</td><td>2</td></tr>
+    	<tr><td>AUBAMEYANG</td><td>11</td><td>3</td></tr>
+    	<tr><td>AGUERO</td><td>10</td><td>4</td></tr>
+    	<tr><td>DANNY INGS</td><td>10</td><td>5</td></tr>
+    	<tr><td>SADIO MANE</td><td>8</td><td>6</td></tr>
+    	<tr><td>RASHFORD</td><td>7</td><td>7</td></tr>
+    </tbody>
+    </table>
+    <!-- 축수 선수 순위 표 (도움)-->
+    <table id="position" style="top: 140%; left: 40%; font-size: 15px;">
+    <thead>
+    	<tr><th>NAME</th><th>ASSIST</th><th>RANK</th></tr>
+    </thead>
+    <tbody>
+    	<tr><td>KEVIN DE BRUYNE</td><td>19</td><td>1</td></tr>
+    	<tr><td>ARNOLD</td><td>19</td><td>2</td></tr>
+    	<tr><td>SILVA</td><td>17</td><td>3</td></tr>
+    	<tr><td>RIYAD MAHREZ</td><td>15</td><td>4</td></tr>
+    	<tr><td>FIRMINO</td><td>13</td><td>5</td></tr>
+    	<tr><td>EMILIANO</td><td>10</td><td>6</td></tr>
+    	<tr><td>HEUNG-MIN SON</td><td>7</td><td>7</td></tr>
+    </tbody>
+    </table>
+
+    <a style="position: absolute; top: 171%; left: 20%; font-size: 30px;">
+    	<script>document.write("Expectation of wage")</script>
+    </a>
+    <!-- 사용자 객체 -->
+    <div id="br" style="position: absolute; top: 176%; left: 20% ;font-size : 20px">    	
+    	<script>
+    		var re = new soccer("JAMIE VARDY", 19, 100) 
+    		document.write("wage expectation : ")
+    		document.write(re.player + "<br>")
+    		document.write("goal : " + re.goal + ", money : 100k" + "<br>")
+
+    		re.won(19);
+    		re.lost(7);
+    		document.write("JAMIE VARDY's total expectation of wage : " + re.expect() + "k" + "<br>" + "<br>")
+
+    		var re = new soccer("KEVIN DE BRUYNE", 19, 150) 
+    		document.write("wage expectation : ")
+    		document.write(re.player + "<br>")
+    		document.write("assists : " + re.goal + ", money : 100k" + "<br>")
+
+    		re.won(19);
+    		re.lost(2);
+    		document.write("JAMIE VARDY's total expectation of wage : " + re.expect() + "k")
+    	</script>
+    </div>
+    <!-- 축구선수 연봉 뜨는 함수 출력 onclick -->
+    <div style="position: absolute; top: 176%; left: 50%; font-size: 20px;">
+    	<script>document.write("expectation wage")</script><input type="button" value="go" onclick="go()">
+    </div>
+    <!-- 베스트 퍼포먼스  (손흥민 사진) dom객체 span tag 동적변형-->
+    <a id="Best" style="position: absolute; display: inline-block; top: 200%; left: 20%; font-size: 50px;" >Best performance</a>
+    <div id="position" style="top: 210%; left: 20%; width: 36%; height: 60%;">
+    <img id="c" style="position: absolute; top: 10%;" src="http://res.heraldm.com/content/image/2019/12/20/20191220000080_0.jpg" onmouseover="this.src='https://www.mirae-biz.com/news/photo/201504/18147_13871_403.jpg'" onmouseout="this.src='http://res.heraldm.com/content/image/2019/12/20/20191220000080_0.jpg'">
+    <a style="position: absolute; top: 90%; font-size: 20px;
+    "> 
+<span1 id="myspan" style="color: black">Son</span1> was also honored in 2013, 2014 and 2017. The fourth award breaks 
+a tie with three-time honoree
+<span1 id="myspan" style="color: black">Ki Sung-yueng</span1>, who earned the award in 2011, 2012 and 2016.
+Son topped the voting by the media and the KFA's election committee.
+Players were award points based 
+on a top-three vote, and Son came away with 209 points.
+Valencia CF midfielder Lee Kang-in, who led South Korea to second
+place at the FIFA U-20 World Cup in 
+June, was a distant second with 69 points, followed 
+by Ulsan Hyundai FC midfielder 
+<span1 id="myspan" style="color: black">Kim Bo-kyung</span1> (48 points), the reigning K League 1 MVP.
+The award is open to all South Korean-born players, 
+regardless of their club affiliations.
+<span1 id="myspan" style="color: black">Son</span1> became the all-time Korean scoring leader in European club football on Nov. 
+6 when he scored a pair of goals in a UEFA Champions League match 
+to move past former Bundesliga legend <span1 id="myspan" style="color: black">Cha Bum-kun</span1>'s mark of 121 	
+          </a>
+          <input id="q" type="button" value="highlight" onclick="change()">
+    </div>
+
+    <!-- tennis -->
+    <div class="line_Tennis" id="Tennis" style="border-bottom: 2px solid darkgrey; width: 60%;">Tennis</div>
+    <img id="position" style="top: 304%; left: 20%;" src="https://www.atptour.com/-/media/tennis/players/gladiator/2019/djokovic_full_ao19.png?sc=0&hash=9F8EC58D1E71C33886957619C7FBA3CF">
+    <img id="position" style="top: 304%; left: 40%" src="https://www.atptour.com/-/media/tennis/players/gladiator/2020/tsitsipas_full_ao20.png?sc=0&hash=0FB8B15775BA811F98A9E3DE43912E12">
+    <a id="position" style="top: 366%; left: 32.5%; font-size: 30px;">Who's gonna win?</a>
+    <a id="h" style="position: absolute; top: 374%; left: 25%; font-size: 20px;"><span style="cursor: pointer;" onclick="novak()">NOVAk DJOKOVIC</span></a>
+    <a style="position: absolute; top: 374%; left: 45%; font-size: 20px;"><span style="cursor: pointer;" onclick="stefano()">STEFANO</span></a>
+    <!-- 밑에 사진 파트  -->
+    <!-- top 383 -->
+    <div id="position" style="top: 383%; left: 20%; height: 300px; width: 15%; text-decoration: none; box-shadow: 2px 2px 2px darkgray;" ><img style="width: 100%;" src="https://ichef.bbci.co.uk/onesport/cps/800/cpsprodpb/D8DE/production/_112981555_murray.jpg">
+    	<a style="text-decoration: none" href="https://www.bbc.com/sport/tennis/53192768">'Grand Slams are my priority' - fit-again Murray targets US and French Opens
+            5d5 days ago
+        </a>
+    </div>
+    <div id="position" style="top: 383%; left: 36%; height: 300px; width: 15%; box-shadow: 2px 2px 2px darkgray"><img style="width: 100%;" src="https://ichef.bbci.co.uk/onesport/cps/800/cpsprodpb/10958/production/_113082976_hewettreid2.png">
+    	<a style="text-decoration: none" href="https://www.bbc.com/sport/disability-sport/53169788">'US Open: Wheelchair events to be held after player backlash
+        </a>
+    </div>
+    <div id="position" style="top: 383%; left: 52%; height: 300px; width: 15%; text-decoration: none; box-shadow: 2px 2px 2px darkgray"><img style="width: 100%; " src="https://ichef.bbci.co.uk/onesport/cps/800/cpsprodpb/162D9/production/_113014809_gettyimages-1219978718.jpg">
+    	<a style="text-decoration: none" href="https://www.bbc.com/sport/tennis/53131665">Novak Djokovic must 'feel responsibility' at coronavirus at Adria Tour, says Evans
+        </a>
+    </div>   
+    
+    <!-- top 400 -->
+    <div id="position" style="top: 410%; left: 20%; height: 300px; width: 15%; box-shadow: 2px 2px 2px darkgray"><img style="width: 100%;" src="https://ichef.bbci.co.uk/onesport/cps/800/cpsprodpb/6236/production/_113024152_brits.jpg">
+    	<a style="text-decoration: none" href="https://www.bbc.com/sport/tennis/53192768">Andy Murray wins Battle of the Brits opener against Liam Broady
+        </a>
+    </div>
+    <div id="position" style="top: 410%; left: 36%; height: 300px; width: 15%; box-shadow: 2px 2px 2px darkgray"><img style="width: 100%; box-shadow: 2px 2px 2px darkgray" src="https://ichef.bbci.co.uk/onesport/cps/800/cpsprodpb/112A1/production/_110850307_gettyimages-1199196732.jpg">
+    	<a style="text-decoration: none" href="https://www.bbc.com/sport/tennis/53192768">Davis Cup and Fed Cup: Finals of team tennis competitions postponed until 2021
+        </a>
+    </div>
+    <div id="position" style="top: 410%; left: 52%; height: 300px; width: 15%; box-shadow: 2px 2px 2px darkgray"><img style="width: 100%;" src="https://ichef.bbci.co.uk/onesport/cps/800/cpsprodpb/508C/production/_113102602_murray_getty_fh.jpg">
+    	<a style="text-decoration: none" href="https://www.bbc.com/sport/tennis/53182099">Battle of the Brits: Andy Murray & Dan Evans into semi-finals
+        </a>
+    </div>
+
+    <!-- golf -->
+    <div class="line_Golf" id="Golf" style="border-bottom: 2px solid darkgrey; width: 60%;">Golf</div>
+    <div id="position" style="top: 455%; left: 20%; height: 70%; width: 50%">
+    	<a id="position" style="top: 10%; font-size: 30px">Graeme McDowell withdraws from tournament as caddie Comboy tests positive for Covid-19</a>
+    	<img id="position" style="top: 23%; width: 100%" src="https://ichef.bbci.co.uk/onesport/cps/800/cpsprodpb/1254D/production/_113058057_mcdowell_pa.jpg">
+    	<a id="position" style="top: 120%; font-size: 20px;">Graeme McDowell has pulled out of this week's Travelers Championship in the USA because his caddie Ken Comboy tested positive for coronavirus.
+
+        Northern Irishman McDowell, 40, said he was withdrawing for the protection of others players and his own physical and mental wellbeing.
+
+        It was later revealed that Brooks Koepka's Northern Ireland-born caddie Ricky Elliott had also tested positive.
+
+        Koepka has also pulled out as has his brother Chase and Webb Simpson.
+
+        PGA Tour commissioner Jay Monahan said that four-time major winner Koepka and former US Open champion Simpson had opted out of the Connecticut event because of an "abundance of caution after having tested positive for Covid-19".
+
+        The PGA Tour event starts on Thursday in Cromwell, Connecticut.
+
+        McDowell had tested negative earlier this week, but his long-time bagman returned a positive test on Tuesday.</a>
+    </div>
+    <!-- 사진파트 -->
+    <!-- top 570 -->
+    <div id="position" style="top: 570%; left: 20%; height: 300px; width: 15%; text-decoration: none;" ><img style="width: 100%;" src="https://e1.365dm.com/20/06/384x216/060fb20ea8dfa9d666a3017108c4a3f71a290415eb4be82f62e41bbc64868767_5022654.jpg?20200625184545">
+    	<a style="text-decoration: none" href="https://www.bbc.com/sport/tennis/53192768">Strong line-up for charity golf event
+        </a>
+    </div>
+    <div id="position" style="top: 570%; left: 36%; height: 300px; width: 15%; text-decoration: none;" ><img style="width: 100%;" src="https://e2.365dm.com/20/06/384x216/Ut_HKthATH4eww8X4xMDoxOjBzMTt2bJ_5022785.jpg?20200625204450">
+    	<a style="text-decoration: none" href="https://www.bbc.com/sport/tennis/53192768">McIlroy: Would've been silly to cancel
+        Rory McIlroy supports the PGA Tour's decision to go ahead with the Travelers Championship and reacts to recent positive Covid-19 tests.
+        </a>
+    </div>
+    <div id="position" style="top: 570%; left: 52%; height: 300px; width: 15%; text-decoration: none;" ><img style="width: 100%;" src="https://e1.365dm.com/20/06/384x216/skysports-thomas-detry-golf_5022855.jpg?20200625221000">
+    	<a style="text-decoration: none" href="https://www.skysports.com/search?q=golf&search=the+site&v=2">MacLaren was one of only three players in the field to finish under par
+        </a>
+    </div>
+     <div id="position" style="top: 570%; left: 68%; height: 300px; width: 15%; text-decoration: none;" ><img style="width: 100%;" src="https://e2.365dm.com/20/06/768x432/skysports-liz-young-golf-rose-ladies-series_5022757.jpg?20200625202505">
+    	<a style="text-decoration: none" href="https://www.skysports.com/golf/news/12176/12014877/meghan-maclaren-wins-second-event-of-rose-ladies-series-at-moor-park">Young lost out in a play-off to Charley Hull at the opening event of the series
+        </a>
+     </div>
+    <!-- top 600 -->
+    <div id="position" style="top: 600%; left: 20%; height: 300px; width: 15%; text-decoration: none;" ><img style="width: 100%;" src="https://e1.365dm.com/20/06/768x432/skysports-bryson-dechambeau_5020997.jpg?20200623182034">
+    	<a style="text-decoration: none" href="https://www.skysports.com/golf/news/12176/12013400/travelers-championship-tv-times-and-how-to-watch-live-on-sky-sports">Travelers Championship: TV times and how to watch live on Sky Sports
+        </a>
+    </div>
+    <div id="position" style="top: 600%; left: 36%; height: 300px; width: 15%; text-decoration: none;" ><img style="width: 100%;" src="https://e2.365dm.com/20/06/768x432/skysports-matt-wallace-golf_5023543.jpg?20200626171636">
+    	<a style="text-decoration: none" href="https://www.skysports.com/golf/news/12232/12015497/denny-mccarthy-latest-pga-tour-player-to-test-positive-for-covid-19">Wallace will play on his own during the second round
+        </a>
+    </div>
+    <div id="position" style="top: 600%; left: 52%; height: 300px; width: 15%; text-decoration: none;" ><img style="width: 100%;" src="https://e2.365dm.com/20/06/768x432/skysports-matt-wallace-golf_5023732.jpg?20200626214757">
+    	<a style="text-decoration: none" href="https://www.bbc.com/sport/tennis/53192768">Wallace played on his own, while every other group went out in threeballs
+        </a>
+    </div>
+    <div id="position" style="top: 600%; left: 68%; height: 300px; width: 15%; text-decoration: none;" ><img style="width: 100%;" src="https://e1.365dm.com/20/06/768x432/skysports-matt-wallace-golf_5023729.jpg?20200626214630">
+    	<a style="text-decoration: none" href="https://www.bbc.com/sport/tennis/53192768">The latest from the Travelers Championship, where Denny McCarthy tested positive for coronavirus and Bud Cauley withdrew as a precaution
+        </a>
+    </div>	
+
+    <!-- basketball -->
+    <div class="line_basketball" id="Basketball" style="border-bottom: 2px solid darkgrey; width: 60%;">Basketball</div>
+    <!-- top 640 -->
+    <div id="position" style="top: 640%; left: 20%; height: 300px; width: 18%; text-decoration: none;" ><img style="width: 100%;" src="https://e0.365dm.com/20/06/1600x900/skysports-derrick-jones-jr_5023010.jpg?20200626064450">
+    	<a style="text-decoration: none" href="https://www.skysports.com/nba/news/36226/12015066/miami-heats-derrick-jones-jr-tests-positive-for-coronavirus-reports">'Miami Heat's Derrick Jones Jr tests positive for coronavirus - reports
+        </a>
+     </div>
+     <div id="position" style="top: 640%; left: 40%; height: 300px; width: 18%; text-decoration: none;" ><img style="width: 100%;" src="https://ichef.bbci.co.uk/onesport/cps/800/cpsprodpb/18326/production/_113101199_carter2.jpg">
+    	<a style="text-decoration: none" href="https://www.bbc.com/sport/basketball/53185656">'Vince Carter retires from basketball after record 22 NBA seasons
+        </a>
+     </div>
+     <div id="position" style="top: 640%; left: 60%; height: 300px; width: 18%; text-decoration: none;" ><img style="width: 100%;" src="https://e0.365dm.com/20/01/1600x900/utah-jazz-pelicans-nba_4893665.jpg?20200117044827">
+    	<a style="text-decoration: none" href="https://www.bbc.com/sport/tennis/53192768">NBA announces revised 2019-20 season restart after coronavirus hiatus</a>
+     </div> 
+     <div id="position" style="top: 670%; left: 20%; height: 80%;">
+     <img style="height: 30%" src="https://ichef.bbci.co.uk/news/624/cpsprodpb/10497/production/_112711766_066b5d56-90bc-43b6-9081-201e23432819.jpg">
+     <a id="position" style="left: 105%; width: 125%">At first glance, County Tyrone seems like an unlikely stage for a basketball player who is widely regarded as one of the greatest point guards of all time.
+
+     But in the spring of 1988 NBA star John Stockton showed up to coach at a basketball camp in the mid-Ulster town of Dungannon.
+
+     The Utah Jazz veteran's CV speaks for itself.
+
+     He still holds the record for most career assists and steals in the NBA and has two Olympic gold medals.
+
+     So how did an NBA Hall-of-Famer who hails from Spokane, Washington, turn up in Dungannon?
+
+     Speaking to BBC News NI the 58-year-old smiles as he recalls: "I have fond memories of Dungannon. I took a trip to Ireland with my wife, my son who was six months old at the time and my parents.</a>
+     </div>
+
+
+</section>
+
+<aside class="aside"></aside>
+<!-- footer 시작 -->
+<footer id="m" class="footer" >
+	<div class="bottom_div" id="bottom" style="background-color: #CC3333; box-shadow: 3px 3px 3px  darkgray">
+         <!-- 하단 footer에 있는 메뉴 -->
+         <ul>
+           SPORTS ALL
+         </ul>
+         <div class="bottom_small_div">
+               <ul style="border-bottom: none;">
+               	    Sports
+                <li><a href="">SOCCER</a></li>
+                <li><a href="">BASKETBALL</a></li>
+                <li><a href="">TENNIS</a></li>
+                <li><a href="">BASEBALL</a></li>
+               </ul>           
+         </div>
+          <div class="bottom_small_div" style="left: 20%;">
+               <ul style="border-bottom: none;">
+               	    Sponser
+               <li><a href="">YJK</a></li>
+               <li><a href="">yjkbet</a></li>
+               <li><a href="">betterlife</a></li>
+               <li><a href="">goahead</a></li>
+               </ul>           
+         </div>
+         <div class="bottom_small_div" style="left: 40%;">
+               <ul style="border-bottom: none;">
+               	    Sports brand
+               <li><a href="">NIKE</a></li>
+               <li><a href="">JK ARTSOOCCER</a></li>
+               <li><a href="">CANVAS</a></li>
+               <li><a href="">ADIDAS</a></li>
+               </ul>           
+         </div>
+         <div class="bottom_small_div" style="left: 60%;">
+               <ul style="border-bottom: none;">
+               	    Contributor
+               <li><a href="">SEAN</a></li>
+               <li><a href="">JOHN .J.K</a></li>
+               <li><a href="">WILLIAM BRUCE</a></li>
+               <li><a href="">LEBRON</a></li>
+               </ul>           
+         </div>
+         <!-- 콤보박스 -->
+         <a id="position" style="left: 80%">Language</a>
+         <select id="position" style="left: 90%">
+         	<option>ENGLISH</option>
+            <option>KOREAN</option>
+            <option>GERMAN</option>
+            <option>CHINESE</option>
+            <option>JAPANESE</option>
+         </select>
+         <div style="position: absolute; bottom: 10%; font-size: 20px;">
+         <script>
+    	 // Date 객체 생성
+    	 var today= new Date();
+         document.write("Time : " + today.toLocaleString() + "<br>");
+         </script>
+         </div>
+         <!-- 음악 -->
+         <div  id="k" style="position: absolute; bottom: 10%; left: 75%;">
+  		       <audio controls>
+               <source src="https://docs.google.com/uc?export=open&id=1FHbl7f2ZkDoQ7O-Vcg895mT-RWwQLmgu" type='audio/mp3' />
+               </audio>
+  	     </div>
+    </div>
+
+    <!-- scipt 평가목록 -->
+    <div id="position" style="top: 770%; left: 20%;">
+    	<h1 id="평가목록">평가목록</h1>
+    	<ul>Chap2 
+        <li><a>1.html 개요(모든 부분 적용)</a>
+        <li><a>2.html 기본 문서 만들기</a>
+        	<ul>
+        		<li><a href="#br">br</a></li>
+        		<li><a href="#a">블록태그와 인라인태그</a></li>
+        	</ul>
+        </li>	
+        <li><a>3.고급 문서 만들기</a>
+            <ul>
+        		<li><a href="#c">img 삽입</a></li>
+        		<li><a href="#a">중첩리스트 만들기</a></li>
+        		<li><a href="#e">표만들기</a></li>
+        	</ul>
+        </li>	
+        <li><a>4.하이퍼링크와 항해</a>
+             <ul>
+        		<li><a href="#f">하이퍼링크 만들기</a></li>
+        		<li><a href="#a">앵커만들기</a></li>
+        	 </ul>
+        </li>	 
+        <li><a>5.미디어 삽입</a>
+        	 <ul>
+        		<li><a href="#j">비디오 삽입</a></li>
+        		<li><a href="#k">오디오 삽입</a></li>
+        	 </ul>
+        </li>	 
+        </ul>
+        <ul>Chap3 
+        <li><a>1.html 문서 구조화</a>
+             <ul>
+        		<li><a href="#f">header</a></li>
+        		<li><a href="#f">nav</a></li>
+        		<li><a href="#f">section</a></li>
+        		<li><a href="#f">aside</a></li>
+        		<li><a href="#m">footer</a></li>
+        	 </ul>
+        </li>	 
+        <li><a>2.웹 폼</a>
+             <ul>
+        		<li><a href="log in.html">로그인폼</a></li>
+        	 </ul>
+        </li>	 
+        <li><a>3.폼 만들기</a>
+        	<ul>
+        		<li><a href="#f">텍스트입력</a></li>
+        		<li><a href="#f">다양한버튼</a></li>
+        		<li><a href="#m">콤보박스</a></li>
+        		<li><a href="log in.html">로그인폼</a></li>
+        	 </ul>
+        </li>	 
+        </ul> 
+        <ul>Chpa4
+        <li><a>1.스타일 시트 만들기(모든곳에 적용)</a> 
+        <li><a>3.셀렉터</a>
+             <ul>
+        		<li><a href="#a">태그 이름 셀렉터(기본사용)</a></li>
+        		<li><a href="#a">class 셀렉터(기본사용)</a></li>
+        		<li><a href="#a">id 셀렉터(기본사용)</a></li>
+        		<li><a href="#a">셀럭터 조합하기</a></li>
+        		<li><a href="#a">속성 셀렉터</a></li>
+        		<li><a href="#a">hover</a></li>
+        		<li><a href="log in.html">focus</a></li>
+        	 </ul>
+        </li>	  
+        <li><a>4.색과 테스트 꾸미기</a>
+        	<ul>
+        		<li><a href="#f">색활용</a></li>
+        		<li><a href="#f">폰트 꾸미기</a></li>
+        	</ul>
+        </li>	  
+        <li><a>5.박스 모델</a> 
+        	 <ul>
+        		<li><a href="#a">박스꾸미기</a></li>
+        		<li><a href="log in.html">둥근 모서리</a></li>
+        		<li><a href="#f">박스 배경색</a></li>
+        	 </ul>
+        </li>	  
+        <li><a>6.시각적 효과</a>
+        	  <ul>
+        		<li><a href="#f">텍스트 그림자</a></li>
+        		<li><a href="#f">박스 그림자</a></li>
+        		<li><a href="#h">마우스 커서 제어</a></li>
+        	 </ul>
+        </li>	  
+        </ul> 
+        <ul>Chap5 
+        <li><a>1.배치</a>
+        	   <ul>
+        		<li><a href="#f">박스display(블록박스)</a></li>
+        		<li><a href="#f">박스display(인라인 박스)</a></li>
+        		<li><a href="#f">박스배치float</a></li>
+        		<li><a href="#f">박스배치절대배치</a></li>
+        	 </ul>
+        </li>	  
+        <li><a>2.리스트 꾸미기</a>
+        	 <ul>
+        		<li><a href="#a">마커 종류</a></li>
+        		<li><a href="#a">리스트메뉴만들기</a></li>
+        	 </ul>
+        </li>	  
+        <li><a>3,표 꾸미기</a>
+        	 <ul>
+        		<li><a href="#e">표테두리제어</a></li>
+        		<li><a href="#e">셀크기 제어</a></li>
+        		<li><a href="#e">셀여백 제어</a></li>
+        		<li><a href="#e">배경색과 테두리효과</a></li>
+        	 </ul>
+        </li>	  
+        <li><a>4.폼 꾸미기</a>
+             <ul>
+        		<li><a href="log in.html">폼 요소에 스타일 입히기</a></li>
+        		<li><a href="log in.html">폼 요소에 마우스 처리(focus)</a></li>
+        	 </ul>
+        </li>	   
+        <li><a>5.css3태그 동적 변화</a>
+        	 <ul>
+        		<li><a href="#h">전환(transition)</a></li>
+        	 </ul>
+        </li>	  
+        </ul>
+        <ul>Chap6 
+        <li><a>1.자바스크립트 시작</a>
+        	 <ul>
+        		<li><a href="#c">HTML태그이벤트리스너에 자바스크립트 코드 작성</a></li>
+        		<li><a href="#e">프롬프트</a></li>
+        		<li><a href="#e">경고다이얼 로그</a></li>
+        	 </ul>
+        </li>	  
+        <li><a href="#e">2.데이터 타입과 변수</a>
+        </li>	  
+        <li><a>3.식과 연산자</a>
+        	<ul>
+        		<li><a href="#e">변수</a></li>
+        		<li><a href="#e">상수</a></li>
+        		<li><a href="#e">산술</a></li>
+        		<li><a href="#e">증감</a></li>
+        	 </ul>
+        </li>	  
+        <li><a>4.조건문</a>
+        	<ul>
+        		<li><a href="#e">if문</a></li>
+        		<li><a href="#e">if-else</a></li>
+        		<li><a href="#e">다중if-else</a></li>
+        	</ul>
+        <li><a>5.반복문</a>
+            <ul>
+        		<li><a href="#e">for문</a></li>
+        	</ul>
+        <li><a href="#e">6.함수</a>
+        </ul>
+        <ul>Chap7
+        <li><a href="#e">1.객체 개념</a>
+        <li><a href="#m">2.코어 객체 다루기(Date)</a>
+        <li><a href="#q">3.배열과 array</a>
+        <li><a href="log in.html">4.Date</a>
+        <li><a href="#e">5.String</a>
+            <ul>
+        		<li><a href="#q">문자열길이</a></li>
+        	</ul>
+        </li>	 
+        <li><a>6.Math</a>
+        <li><a>7.사용자 객체 만들기</a> 
+        	<ul>
+        		<li><a href="#e">프로토타입개체(개체만들기에 자바스크립 6내용다 포함)</a></li>
+        	</ul>
+        </li>	
+        </ul>
+        <ul>Chap8
+        <li><a>2.dom 객체 다루기</a>
+        	<ul>
+        		<li><a href="#q">스판태그동적변형</a></li>
+        		<li><a href="#e">this활용</a></li>
+        	 </ul>
+        </li>	  
+        </ul> 
+    </div>
+</footer>
+</body>
+</html>
