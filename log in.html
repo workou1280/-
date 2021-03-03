@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <style>
+    	html, body { height : 105%}
+        /*로그박스*/
+    	.log_in_box { display: inline-block;
+    	position: absolute;
+    	top: 20% ;
+    	left: 10%;
+    	border : 1px solid lightgray; 
+        width: 446.656px;
+        height: 552px; 
+        background: white;
+        }
+        div > a  { 
+      	  display: block; 
+      	  position: absolute; 
+      	  left: 10%;
+        }
+        /*로그 박스 인사이드 디자인*/
+        #inside_log_input { 
+        background-color:transparent;
+        text-align:left;
+        display: block; 
+        position: absolute;
+        border-top:0px transparent;
+        border-left: 0px transparent;
+        border-right: 0px transparent; 
+        border-bottom: 3px;
+        border-bottom-style: solid;
+        border-bottom-color: black; 
+        text-align: left; 
+        outline:none;
+        font-size: 20px; 
+        width: 80%; 
+        height: 8%; 
+        left: 10%;
+        }
+        /*//포커스 기능*/
+        input:focus::-webkit-input-placeholder {
+        	opacity: 0;
+        }
+
+        input:focus{
+         border-bottom: 10px solid #CCFF33 !important;
+        }
+
+        #sign_in_bottom_box { 
+        	display: table; 
+      	    position: absolute; 
+      	    text-align: center;
+      	    left: 10%;
+      	    border-style: solid ;
+        	border-radius: 50px;
+        	background-color: #CCFF33;
+        	width: 80%;
+        	height: 12%;
+        	top : 80%;
+        }
+       
+        #sign_in_bottom_box_sub1{
+        	display: table-cell; 
+        	vertical-align: middle;
+        	cursor: pointer;
+        	font : italic bold 40px consolas, sans-serif; 
+        	text-decoration: none; 
+        	color : black;
+            top : 50%;
+        }
+
+
+
+    </style>
+</head>
+<body style="background: darkgray;">
+	<div class="log_in_box">
+       
+		<a href="기말과제.html" style="font : italic bold 
+        40px consolas, sans-serif; text-decoration: none; color : black;
+		top: 7%">SPORTS ALL</a>
+     
+		<a style="font : italic bold 40px consolas, sans-serif; text-decoration: none; color : black; top: 20%">Sign in</a>
+        <!-- Email or username -->
+        <input type="text" id="inside_log_input"
+        style="top: 40%" placeholder="Email or username" ><!-- secret num -->
+        <input type="text" id="inside_log_input" style="top : 60%" placeholder="Password" > 
+        <!-- log in char box -->
+        <div id="sign_in_bottom_box" id="sign_in_bottom_box_sub1" 
+        onclick="location.href='기말과제.html'">
+        <div id="sign_in_bottom_box_sub1">
+        sign in
+        </div>
+        
+    </div>
+    <!-- 데이트 객체 사이트 들어갈 때 마다 시간 바뀌는 것  -->
+    <script>
+            var re = new Date();
+            if(re.getSeconds() % 2 == 0)
+               document.body.style.backgroundColor = "#FF6666";
+            else
+               document.body.style.backgroundColor = "lightskyblue";
+    </script>
+</body>
+</html>
